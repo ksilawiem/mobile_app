@@ -1,8 +1,8 @@
-import 'package:app/page/Mes%20candidature.dart';
-import 'package:app/page/test.dart';
+import 'package:mobile_app/page/Mes%20candidature.dart';
+import 'package:mobile_app/page/test.dart';
 import 'package:flutter/material.dart';
-import 'package:app/page/edit_profil.dart';
-import 'package:app/page/login.dart';
+import 'package:mobile_app/page/edit_profil.dart';
+import 'package:mobile_app/page/login.dart';
 
 import 'SettingPage.dart';
 import 'listTest.dart';

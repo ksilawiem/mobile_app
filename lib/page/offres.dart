@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/offresDetails.dart';
+import 'package:mobile_app/page/offresDetails.dart';
 
 class offres extends StatelessWidget {
   List img = [

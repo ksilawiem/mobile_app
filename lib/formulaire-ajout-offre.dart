@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/profil_candidat.dart';
-import 'package:app/page/test.dart';
+import 'package:mobile_app/page/profil_candidat.dart';
+import 'package:mobile_app/page/test.dart';
 import 'package:http/http.dart' as http;
 
 import 'page/delayed_animation.dart';

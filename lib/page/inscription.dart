@@ -1,8 +1,8 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:app/page/profil_candidat.dart';
+import 'package:mobile_app/page/profil_candidat.dart';
 import 'delayed_animation.dart';
-import 'package:app/page/test.dart';
+import 'package:mobile_app/page/test.dart';
 import 'package:http/http.dart' as http;
 
 //import 'package:file_picker/file_picker.dart';

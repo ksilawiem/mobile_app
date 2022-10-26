@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app/controllers/question_controller.dart';
-import 'package:app/page/models/Questions.dart';
-import 'package:app/page/components/option.dart';
+import 'package:mobile_app/controllers/question_controller.dart';
+import 'package:mobile_app/page/models/Questions.dart';
+import 'package:mobile_app/page/components/option.dart';
 
 import '../../../constants.dart';
 import 'option.dart';

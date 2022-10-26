@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:app/page/models/Questions.dart';
-import 'package:app/page/score_screen.dart';
+import 'package:mobile_app/page/models/Questions.dart';
+import 'package:mobile_app/page/score_screen.dart';
 
 // We use get package for our state management
 

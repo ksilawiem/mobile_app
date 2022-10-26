@@ -1,7 +1,7 @@
-import 'package:app/page/listTest.dart';
+import 'package:mobile_app/page/listTest.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app/page/listeCandidat.dart';
+import 'package:mobile_app/page/listeCandidat.dart';
 
 import 'login.dart';
 //import 'package:google_fonts/google_fonts.dart';

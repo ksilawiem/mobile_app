@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/profil_recru.dart';
+import 'package:mobile_app/page/profil_recru.dart';
 import 'delayed_animation.dart';
 //import 'package:date_range_form_field/date_range_form_field.dart';
 import 'package:intl/intl.dart';

@@ -1,9 +1,9 @@
-import 'package:app/page/SettingPage.dart';
-import 'package:app/page/login.dart';
-import 'package:app/page/profil_candidat.dart';
-import 'package:app/page/test.dart';
+import 'package:mobile_app/page/SettingPage.dart';
+import 'package:mobile_app/page/login.dart';
+import 'package:mobile_app/page/profil_candidat.dart';
+import 'package:mobile_app/page/test.dart';
 import 'package:flutter/material.dart';
-import 'package:app/page/welcome_page.dart';
+import 'package:mobile_app/page/welcome_page.dart';
 
 import 'drawer_item.dart';
 

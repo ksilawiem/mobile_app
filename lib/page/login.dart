@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:app/page/profilCan.dart';
-import 'package:app/page/profil_candidat.dart';
+import 'package:mobile_app/page/profilCan.dart';
+import 'package:mobile_app/page/profil_candidat.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../Services/globals.dart';

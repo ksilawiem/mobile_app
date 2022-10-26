@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:app/main.dart';
-import 'package:app/page/form_stripe.dart';
-import 'package:app/page/welcome_page.dart';
+import 'package:mobile_app/main.dart';
+import 'package:mobile_app/page/form_stripe.dart';
+import 'package:mobile_app/page/welcome_page.dart';
 
 import 'delayed_animation.dart';
 

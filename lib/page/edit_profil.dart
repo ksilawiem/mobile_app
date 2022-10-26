@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/SettingPage.dart';
-import 'package:app/page/profil_candidat.dart';
+import 'package:mobile_app/page/SettingPage.dart';
+import 'package:mobile_app/page/profil_candidat.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override

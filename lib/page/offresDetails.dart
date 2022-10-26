@@ -1,7 +1,7 @@
-import 'package:app/page/test.dart';
+import 'package:mobile_app/page/test.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
-import 'package:app/main.dart';
+import 'package:mobile_app/main.dart';
 
 import 'answer.dart';
 //import 'package:flutter_mentor_quiz_app_tut/quiz/home.dart';

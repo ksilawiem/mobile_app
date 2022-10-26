@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/incription_recruteur.dart';
-import 'package:app/page/inscription.dart';
+import 'package:mobile_app/page/incription_recruteur.dart';
+import 'package:mobile_app/page/inscription.dart';
 import 'delayed_animation.dart';
 
 class Candi_recru extends StatelessWidget {

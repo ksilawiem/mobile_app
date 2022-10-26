@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app/page/login.dart';
+import 'package:mobile_app/page/login.dart';
 
 import 'delayed_animation.dart';
 //import 'package:ss/login_page.dart';
