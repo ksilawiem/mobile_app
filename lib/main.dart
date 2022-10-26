@@ -1,9 +1,11 @@
+import 'package:mobile_app/api/api_models/provider_login.dart';
 import 'package:mobile_app/page/SettingPage.dart';
 import 'package:mobile_app/page/login.dart';
 import 'package:mobile_app/page/profil_candidat.dart';
 import 'package:mobile_app/page/test.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/page/welcome_page.dart';
+import 'package:provider/provider.dart';
 
 import 'drawer_item.dart';
 
@@ -21,12 +23,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers: [
+      ChangeNotifierProvider(create: (_)=> ProviderLogin()),
+
+      ],
+      child: 
+
+    
+    MaterialApp(
       title: 'JobSeeker',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: WelcomePage(),
-    );
+    ));
   }
 }

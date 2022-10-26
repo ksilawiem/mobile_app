@@ -6,7 +6,7 @@ class PaymentController extends GetxController {
   late Map<String, dynamic> paymentIntentData;
 
   /*Future<void> makePayment({amount, required String currency}) async {
-    try {
+    try {                                                           
       paymentIntentData = await createPaymentIntent(amount, currency);
       if (paymentIntentData != null) {
         await Stripe.instance.initPaymentSheet(

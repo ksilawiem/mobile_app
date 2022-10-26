@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:mobile_app/api/api_models/provider_login.dart';
+import 'package:mobile_app/api/api_models/user.dart';
 import 'package:mobile_app/page/profilCan.dart';
 import 'package:mobile_app/page/profil_candidat.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,9 @@ class _LogInState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+     final auth = Provider.of<ProviderLogin>(context);
+
+
     return Scaffold(
       body: Container(
         child: Stack(
@@ -153,15 +158,19 @@ class _LogInState extends State<Login> {
                                       borderRadius:
                                           new BorderRadius.circular(20.0)),
                                   onPressed: () async {
-                                    Navigator.push(
-                                        context,
-                                        new MaterialPageRoute(
-                                            builder: (context) =>
-                                                ProfileScreen()));
-                                  },
+                                    final respose = auth.login(mailController.text, passwordController.text).then((response) {
+                                    if (response['status']) {
+                                      User user = response['user'];
+                                      print('Successful ${user.firstName}');
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(content: Text(response['message'])));
+                                    }
+                                  });
+                                }
+                                ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                       ),
