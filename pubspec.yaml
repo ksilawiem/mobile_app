@@ -41,7 +41,7 @@ dependencies:
   flutter_svg: ^1.1.5
   http: ^0.13.5
   flutter_vector_icons: ^2.0.0
-  file_picker: ^5.0.1
+  file_picker: ^4.5.1
   retrofit: ">=3.0.0 <4.0.0"
   dio: ^4.0.6
   json_annotation: ^4.6.0

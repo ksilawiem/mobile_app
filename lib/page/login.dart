@@ -40,8 +40,7 @@ class _LogInState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-     final auth = Provider.of<ProviderLogin>(context);
-
+    final auth = Provider.of<ProviderLogin>(context);
 
     return Scaffold(
       body: Container(
@@ -131,46 +130,50 @@ class _LogInState extends State<Login> {
 
                                   await http.post(
                                       Uri.parse(
-                                          'http://http://192.168.0.100:8000/api/users/login'),
+                                          'http://http:// 192.168.0.102:8000/api/users/login'),
                                       body: {
                                         "Role": "client",
                                         // "first_name": widget.email.password
                                       });
                                 },
                                 child: FlatButton(
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 8, bottom: 8, left: 10, right: 10),
-                                    child: Text(
-                                      'Connexion',
-                                      textDirection: TextDirection.ltr,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15.0,
-                                        decoration: TextDecoration.none,
-                                        fontWeight: FontWeight.normal,
+                                    child: Padding(
+                                      padding: EdgeInsets.only(
+                                          top: 8,
+                                          bottom: 8,
+                                          left: 10,
+                                          right: 10),
+                                      child: Text(
+                                        'Connexion',
+                                        textDirection: TextDirection.ltr,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0,
+                                          decoration: TextDecoration.none,
+                                          fontWeight: FontWeight.normal,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  color: Color.fromARGB(255, 51, 34, 197),
-                                  disabledColor: Colors.grey,
-                                  shape: new RoundedRectangleBorder(
-                                      borderRadius:
-                                          new BorderRadius.circular(20.0)),
-                                  onPressed: () async {
-                                    final respose = auth.login(mailController.text, passwordController.text).then((response) {
-                                    if (response['status']) {
-                                      User user = response['user'];
-                                      print('Successful ${user.firstName}');
-                                    } else {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(SnackBar(content: Text(response['message'])));
-                                    }
-                                  });
-                                }
-                                ),
-                                ),
+                                    color: Color.fromARGB(255, 51, 34, 197),
+                                    disabledColor: Colors.grey,
+                                    shape: new RoundedRectangleBorder(
+                                        borderRadius:
+                                            new BorderRadius.circular(20.0)),
+                                    onPressed: () async {
+                                      final respose = auth
+                                          .login(mailController.text,
+                                              passwordController.text)
+                                          .then((response) {
+                                        if (response['status'] == true) {
+                                          User user = response['user'];
+                                          print('Successful ${user.firstName}');
+                                        } else {
+                                          print('failed');
+                                        }
+                                      });
+                                    }),
                               ),
+                            ),
                           ],
                         ),
                       ),
@@ -182,7 +185,7 @@ class _LogInState extends State<Login> {
                         //forgot password screen
                         await http.post(
                             Uri.parse(
-                                'http://http://192.168.0.100:8000/api/forgetpassword/users/'),
+                                'http://http:// 192.168.0.102:8000/api/forgetpassword/users/'),
                             body: {
                               "Role": "client",
                               // "first_name": widget.email.password
@@ -211,7 +214,7 @@ class _LogInState extends State<Login> {
 
                           await http.post(
                               Uri.parse(
-                                  'http://http://192.168.0.100:8000/api/users/create/'),
+                                  'http://http:// 192.168.0.102:8000/api/users/create/'),
                               body: {
                                 "Role": "client",
                                 // "first_name": widget.email.password

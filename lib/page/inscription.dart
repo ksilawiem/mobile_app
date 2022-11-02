@@ -1,9 +1,12 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/page/profil_candidat.dart';
+import 'package:provider/provider.dart';
+import '../api/api_models/provider_login.dart';
 import 'delayed_animation.dart';
 import 'package:mobile_app/page/test.dart';
 import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart' as dio;
 
 //import 'package:file_picker/file_picker.dart';
 //import 'package:open_file/open_file.dart';
@@ -11,6 +14,7 @@ import 'package:http/http.dart' as http;
 class Inscription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<ProviderLogin>(context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -73,20 +77,28 @@ class Inscription extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),*/
                 ),
-                onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => test(),
-                    ),
-                  );
+                onPressed: () {
+                  //
+                  final Map<String, dynamic> bodyData = {
+                    'firstName': 'nom',
+                    'lastName': 'prenom',
+                    'email': 'email ',
+                    'password': 'motdepasse',
+                    'address': 'adresse',
+                    'birthDate': 'date',
+                    'city': 'ville',
+                    'company': 'company',
+                    'gender': ' sexe',
 
-                  await http.post(
-                      Uri.parse('http://127.0.0.1:8000/api/users/create/'),
-                      body: {
-                        "Role": "client",
-                        // "first_name": widget.email.password
-                      });
+                    //////////////////////////////////////////
+                  };
+                  final respose = auth.createUser(bodyData).then((response) {
+                    if (response['status'] == true) {
+                      print('Successful created');
+                    } else {
+                      print('failed not created');
+                    }
+                  });
                 },
               ),
             ),
@@ -128,6 +140,14 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   var _obscureText = true;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController prenomController = TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController adresseController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController mailcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -139,6 +159,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: nameController,
             decoration: InputDecoration(
               labelText: 'FirstName',
               labelStyle: TextStyle(
@@ -150,6 +171,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: prenomController,
             decoration: InputDecoration(
               labelText: 'LastName',
               labelStyle: TextStyle(
@@ -161,6 +183,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: mailController,
             decoration: InputDecoration(
               labelText: 'Email',
               labelStyle: TextStyle(
@@ -174,6 +197,7 @@ class _LoginFormState extends State<LoginForm> {
           delay: 4500,
           child: TextField(
             obscureText: _obscureText,
+            controller: passwordController,
             decoration: InputDecoration(
               labelStyle: TextStyle(
                 color: Colors.grey[400],
@@ -196,6 +220,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: adresseController,
             decoration: InputDecoration(
               labelText: 'Adresse',
               labelStyle: TextStyle(
@@ -207,6 +232,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: cityController,
             decoration: InputDecoration(
               labelText: 'Ville',
               labelStyle: TextStyle(
@@ -218,6 +244,7 @@ class _LoginFormState extends State<LoginForm> {
         DelayedAnimation(
           delay: 3500,
           child: TextField(
+            controller: dateController,
             decoration: InputDecoration(
               labelText: 'Date de naissance',
               labelStyle: TextStyle(
